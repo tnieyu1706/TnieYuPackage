@@ -1,7 +1,7 @@
 using System;
 using EditorAttributes;
 using SetProperty;
-using TnieYuPackage.CustomAttributes;
+using TnieYuPackage.CustomAttributes.Runtime;
 using UnityEngine;
 
 namespace TnieYuPackage.SOAP.Data

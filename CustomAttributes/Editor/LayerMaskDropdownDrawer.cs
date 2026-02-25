@@ -1,8 +1,9 @@
+using TnieYuPackage.CustomAttributes.Runtime;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace TnieYuPackage.CustomAttributes.PropertyDrawers
+namespace TnieYuPackage.CustomAttributes.Editor
 {
     [CustomPropertyDrawer(typeof(LayerMaskDropdownAttribute))]
     public class LayerMaskDropdownDrawer : PropertyDrawer

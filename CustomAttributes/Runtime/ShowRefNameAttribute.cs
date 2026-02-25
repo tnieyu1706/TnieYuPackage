@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace TnieYuPackage.CustomAttributes
+namespace TnieYuPackage.CustomAttributes.Runtime
 {
     /// <summary>
     /// Apply for class not inherit Unity.Object to show actual type

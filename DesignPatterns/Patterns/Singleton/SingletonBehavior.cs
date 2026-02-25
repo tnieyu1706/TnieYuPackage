@@ -9,7 +9,7 @@ namespace TnieYuPackage.DesignPatterns.Patterns.Singleton
 
         private static T instance;
 
-        private static bool isQuitting = false;
+        private static bool isQuitting;
 
         /// <summary>
         /// Noted when SingletonBehavior in Disable.

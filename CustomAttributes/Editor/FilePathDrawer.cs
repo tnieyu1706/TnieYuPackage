@@ -1,9 +1,10 @@
 using UnityEditor;
 using UnityEngine;
+using FilePathAttribute = TnieYuPackage.CustomAttributes.Runtime.FilePathAttribute;
 
-namespace TnieYuPackage.CustomAttributes.PropertyDrawers
+namespace TnieYuPackage.CustomAttributes.Editor
 {
-    [CustomPropertyDrawer(typeof(FilePathAttribute))]
+    [CustomPropertyDrawer(typeof(Runtime.FilePathAttribute))]
     public class FilePathDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
