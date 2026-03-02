@@ -1,6 +1,6 @@
 using System;
 
-namespace DictionaryUtilities.Runtime
+namespace TnieYuPackage.DictionaryUtilities
 {
     [Serializable]
     public class SerializableDictionary<TKey, TValue> :

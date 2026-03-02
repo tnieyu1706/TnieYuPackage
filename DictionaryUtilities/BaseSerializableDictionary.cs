@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using EditorAttributes;
 using UnityEngine;
 
-namespace DictionaryUtilities.Runtime
+namespace TnieYuPackage.DictionaryUtilities
 {
     [Serializable]
     public abstract class BaseSerializableDictionary<TKeyPair, TKey, TValue> : ISerializationCallbackReceiver
@@ -24,7 +26,7 @@ namespace DictionaryUtilities.Runtime
             {
                 if (dictionary == null)
                 {
-                    RebuildDictionary();
+                    BuildDictionary();
                 }
 
                 return dictionary;
@@ -46,7 +48,7 @@ namespace DictionaryUtilities.Runtime
             dictionary = null;
         }
 
-        public void RebuildDictionary()
+        public void BuildDictionary()
         {
             data ??= new();
 
@@ -58,18 +60,16 @@ namespace DictionaryUtilities.Runtime
             }
         }
 
-        public void ReverseData()
+        public void RebuildData()
         {
             if (dictionary == null) return;
 
             data.Clear();
             foreach (var kvp in dictionary)
             {
-                data.Add(
-                    ISerializableKeyPair<TKey, TValue>
-                        .CreateKeyPair<TKeyPair>(kvp.Key, kvp.Value)
-                );
+                data.Add(new TKeyPair() { Key = kvp.Key, Value = kvp.Value });
             }
         }
+        
     }
 }

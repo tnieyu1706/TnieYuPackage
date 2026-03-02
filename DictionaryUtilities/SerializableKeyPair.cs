@@ -1,22 +1,12 @@
 using System;
 using UnityEngine;
 
-namespace DictionaryUtilities.Runtime
+namespace TnieYuPackage.DictionaryUtilities
 {
     public interface ISerializableKeyPair<TKey, TValue>
     {
         public TKey Key { get; set; }
         public TValue Value { get; set; }
-
-        public static TKeyPair CreateKeyPair<TKeyPair>(TKey key, TValue value)
-            where TKeyPair : struct, ISerializableKeyPair<TKey, TValue>
-        {
-            return new TKeyPair()
-            {
-                Key = key,
-                Value = value
-            };
-        }
     }
 
     [Serializable]
