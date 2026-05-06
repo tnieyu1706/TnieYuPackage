@@ -1,4 +1,4 @@
-#TnieYu Package
+TnieYu Package
 
 TnieYu Package là một thư viện tiện ích (Utility Package) toàn diện dành cho Unity, cung cấp các design pattern, công cụ mở rộng Editor, cấu trúc dữ liệu, và các UI Template (hỗ trợ cả UGUI và UI Toolkit) được thiết kế sẵn sàng để tích hợp nhanh chóng vào các dự án game Unity.
 
