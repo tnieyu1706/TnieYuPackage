@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+#if UNITY_EDITOR && TNIEYUPACKGE_ADDRESSABLES_SUPPORT
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -6,7 +6,6 @@ using UnityEditor;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets;
 using UnityEngine;
-using ZLinq;
 
 namespace TnieYuPackage.CustomAttributes
 {
@@ -81,7 +80,6 @@ namespace TnieYuPackage.CustomAttributes
             }
 
             return entries
-                .AsValueEnumerable()
                 .Select(e => e.address)
                 .Distinct()
                 .OrderBy(e => e)

@@ -2,13 +2,7 @@
     "name": "TnieYuPackage",
     "rootNamespace": "",
     "references": [
-        "EditorAttributes",
-        "UniTask",
-        "Unity.InputSystem",
-        "Unity.2D.Tilemap.Extras",
-        "KBCore.Refs",
-        "LitMotion",
-        "LitMotion.Extensions"
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -17,6 +11,17 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.cysharp.unitask",
+            "expression": "",
+            "define": "TNIEYUPACKAGE_UNITASK_SUPPORT"
+        },
+        {
+            "name": "com.unity.addressables",
+            "expression": "",
+            "define": "TNIEYUPACKAGE_ADRESSABLES_SUPPORT"
+        }
+    ],
     "noEngineReferences": false
 }

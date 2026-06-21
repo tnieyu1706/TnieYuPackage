@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Cysharp.Threading.Tasks;
 using TnieYuPackage.DesignPatterns;
 using UnityEngine;
 
@@ -29,10 +28,11 @@ namespace TnieYuPackage.Handlers
         {
             queue.Enqueue(action);
         }
-
-        public async UniTask RegistryDelay(Action action, float delay, CancellationToken token = default)
+        
+        public async Awaitable RegistryDelay(Action action, float delay, CancellationToken token = default)
         {
-            await UniTask.Delay(TimeSpan.FromSeconds(delay), cancellationToken: token);
+            // await UniTask.Delay(TimeSpan.FromSeconds(delay), cancellationToken: token);
+            await Awaitable.WaitForSecondsAsync(delay, token);
             Registry(action);
         }
     }
