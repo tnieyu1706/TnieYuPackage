@@ -1,7 +1,7 @@
 using TnieYuPackage.DesignPatterns;
 using UnityEngine;
 
-namespace TnieYuPackage.Utils
+namespace TnieYuPackage.Components
 {
     [DefaultExecutionOrder(-15)]
     [RequireComponent(typeof(Canvas))]

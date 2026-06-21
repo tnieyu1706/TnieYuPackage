@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TnieYuPackage.DesignPatterns;
 using UnityEngine;
 
-namespace TnieYuPackage.Handlers
+namespace TnieYuPackage.Core
 {
     [DefaultExecutionOrder(-990)]
     public class InputEventManager : GlobalSingleton<InputEventManager>

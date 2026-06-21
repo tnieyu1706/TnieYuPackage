@@ -4,7 +4,7 @@ using System.Threading;
 using TnieYuPackage.DesignPatterns;
 using UnityEngine;
 
-namespace TnieYuPackage.Handlers
+namespace TnieYuPackage.Core
 {
     [DefaultExecutionOrder(-1000)]
     public class EventManager : GlobalSingleton<EventManager>

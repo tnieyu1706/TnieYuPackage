@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TnieYuPackage.Handlers
+namespace TnieYuPackage.Core
 {
     // public static class TnieYuCoreInitializer
     // {

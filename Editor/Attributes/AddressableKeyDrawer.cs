@@ -1,4 +1,4 @@
-#if UNITY_EDITOR && TNIEYUPACKGE_ADDRESSABLES_SUPPORT
+#if UNITY_EDITOR && TNIEYUPACKAGE_ADRESSABLES_SUPPORT
 using System;
 using System.Linq;
 using System.Collections.Generic;
