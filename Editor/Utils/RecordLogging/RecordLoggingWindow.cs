@@ -101,6 +101,10 @@ namespace TnieYuPackage.Utils
             _config.snapshotMode = EditorGUILayout.Toggle("Snapshot Mode", _config.snapshotMode);
 
             EditorGUILayout.Space();
+            GUILayout.Label("Log Content", EditorStyles.boldLabel);
+            _config.detailLevel = (LogDetailLevel)EditorGUILayout.EnumPopup("Detail Level", _config.detailLevel);
+
+            EditorGUILayout.Space();
             GUILayout.Label("Log Filter", EditorStyles.boldLabel);
             _config.logFilter = (LogTypeFlags)EditorGUILayout.EnumFlagsField("Log Types", _config.logFilter);
 

@@ -86,7 +86,9 @@ namespace TnieYuPackage.Utils
             if (!LogTypeFilterMatches(type)) return;
 
             string timestamp = DateTime.Now.ToString("HH:mm:ss.fff");
-            string entry = $"[{timestamp}] [{type}] {logString}\n{stackTrace}";
+            string entry = _config.detailLevel == LogDetailLevel.Detail
+                ? $"[{timestamp}] [{type}] {logString}\n{stackTrace}"
+                : $"[{timestamp}] [{type}] {logString}";
             _queue.Enqueue(entry);
 
             if (_queue.Count >= _config.queueSize)

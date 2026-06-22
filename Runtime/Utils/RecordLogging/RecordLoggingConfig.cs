@@ -11,6 +11,7 @@ namespace TnieYuPackage.Utils
         public bool appendMode = true;
         public bool snapshotMode = false;
         public LogTypeFlags logFilter = LogTypeFlags.Log | LogTypeFlags.Warning | LogTypeFlags.Error | LogTypeFlags.Exception | LogTypeFlags.Assert;
+        public LogDetailLevel detailLevel = LogDetailLevel.Text;
 
         private static RecordLoggingConfig _instance;
         public static RecordLoggingConfig Instance
@@ -22,6 +23,12 @@ namespace TnieYuPackage.Utils
                 return _instance;
             }
         }
+    }
+
+    public enum LogDetailLevel
+    {
+        Text,
+        Detail,
     }
 
     [System.Flags]
