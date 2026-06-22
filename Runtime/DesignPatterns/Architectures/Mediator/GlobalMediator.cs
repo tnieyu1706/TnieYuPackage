@@ -16,6 +16,7 @@ namespace TnieYuPackage.DesignPatterns
         
         public void Dispose()
         {
+            if (Component == null) return;
             GlobalMediator.Disconnect(Component);
         }
     }
@@ -42,6 +43,9 @@ namespace TnieYuPackage.DesignPatterns
         
         public static void Disconnect(IComponent component)
         {
+            if (component == null || component.IsDisposed) return;
+            
+            component.IsDisposed = true;
             Components.Remove(component);
         }
 

@@ -11,6 +11,8 @@ namespace TnieYuPackage.DesignPatterns
 
     public interface IEventSubscriber
     {
+        public bool IsDisposed { get; }
+
         public void Handle(IEventData data);
     }
 
@@ -50,18 +52,17 @@ namespace TnieYuPackage.DesignPatterns
             list.Add(subscriber);
             OnSubscriberRegistered?.Invoke(subscriber);
 
-            return new ConnectionToken<TEvent>(subscriber);
+            return new EventConnectionToken<TEvent>(subscriber);
         }
 
         public static void UnregisterHandler<TEvent>(IEventSubscriber<TEvent> subscriber)
             where TEvent : IEventData
         {
+            if (subscriber == null || subscriber.IsDisposed) return;
+
             var eventType = typeof(TEvent);
 
-            if (!Subscribers.TryGetValue(eventType, out var list))
-            {
-                return;
-            }
+            if (!Subscribers.TryGetValue(eventType, out var list)) return;
 
             OnSubscriberUnregistering?.Invoke(subscriber);
             list.Remove(subscriber);
@@ -75,7 +76,7 @@ namespace TnieYuPackage.DesignPatterns
         #endregion
 
         #region Pub
-        
+
         public static void Publish(IEventData eventData)
         {
             if (eventData == null) return;
@@ -85,6 +86,7 @@ namespace TnieYuPackage.DesignPatterns
             {
                 return;
             }
+
             var snapshot = subscribers.ToArray();
 
             foreach (var subscriber in snapshot)

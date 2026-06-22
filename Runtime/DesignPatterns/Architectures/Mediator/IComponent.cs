@@ -5,6 +5,7 @@ namespace TnieYuPackage.DesignPatterns
     /// </summary>
     public interface IComponent : IVisitable<IPayload>
     {
+        bool IsDisposed { get; set; }
         string Name { get; }
     }
 }

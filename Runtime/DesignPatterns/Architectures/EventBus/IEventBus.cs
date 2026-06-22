@@ -27,11 +27,13 @@ namespace TnieYuPackage.DesignPatterns
 
             list.Add(subscriber);
 
-            return new ConnectionToken<TEvent>(subscriber);
+            return new EventConnectionToken<TEvent>(subscriber);
         }
 
         public void UnregisterHandler<TEvent>(IEventSubscriber<TEvent> subscriber) where TEvent : IEventData
         {
+            if (subscriber == null || subscriber.IsDisposed) return;
+
             var eventType = typeof(TEvent);
 
             if (!subscribers.TryGetValue(eventType, out var list))
@@ -56,6 +58,7 @@ namespace TnieYuPackage.DesignPatterns
             {
                 return;
             }
+
             var snapshot = eventSubs.ToArray();
 
             foreach (var subscriber in snapshot)
