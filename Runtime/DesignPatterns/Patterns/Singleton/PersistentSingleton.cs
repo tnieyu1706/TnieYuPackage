@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TnieYuPackage.DesignPatterns
 {
-    public abstract class GlobalSingleton<T> : MonoBehaviour where T : Component
+    public abstract class PersistentSingleton<T> : MonoBehaviour where T : Component
     {
         public bool AutoUnparentOnAwake = true;
 

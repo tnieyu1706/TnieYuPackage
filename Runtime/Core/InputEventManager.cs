@@ -6,7 +6,7 @@ using UnityEngine;
 namespace TnieYuPackage.Core
 {
     [DefaultExecutionOrder(-990)]
-    public class InputEventManager : GlobalSingleton<InputEventManager>
+    public class InputEventManager : PersistentSingleton<InputEventManager>
     {
         private readonly Dictionary<KeyCode, Func<bool>> keyboardEvents = new();
 

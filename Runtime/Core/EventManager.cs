@@ -7,7 +7,7 @@ using UnityEngine;
 namespace TnieYuPackage.Core
 {
     [DefaultExecutionOrder(-1000)]
-    public class EventManager : GlobalSingleton<EventManager>
+    public class EventManager : PersistentSingleton<EventManager>
     {
         private readonly Queue<Action> queue = new();
 
