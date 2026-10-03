@@ -84,7 +84,7 @@ namespace TnieYuPackage.Helpers
         {
             foreach (var obj in draggedObjects)
             {
-                if (obj is GameObject || obj is SceneAsset ||
+                if (!EditorUtility.IsPersistent(obj) || obj is GameObject || obj is SceneAsset ||
                     AssetDatabase.IsValidFolder(AssetDatabase.GetAssetPath(obj)))
                     return false;
 
@@ -99,7 +99,8 @@ namespace TnieYuPackage.Helpers
         {
             foreach (var obj in draggedObjects)
             {
-                if (AssetDatabase.IsMainAsset(obj) || AssetDatabase.IsValidFolder(AssetDatabase.GetAssetPath(obj)))
+                if (!EditorUtility.IsPersistent(obj) ||
+                    AssetDatabase.IsMainAsset(obj) || AssetDatabase.IsValidFolder(AssetDatabase.GetAssetPath(obj)))
                     return false;
             }
 
