@@ -1,0 +1,19 @@
+{
+    "name": "TnieYuPackage.Editor.SAB",
+    "rootNamespace": "TnieYuPackage.Tools.SAB",
+    "references": [
+        "Unity.2D.Animation.Editor",
+        "Unity.2D.Animation.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
